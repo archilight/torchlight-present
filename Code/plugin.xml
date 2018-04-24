@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.archimatetool.editor.exportHandler">
+      <exportHandler
+            class="com.torchlight.present.MyExporter"
+            id="com.torchlight.present.exportHandler"
+            label="Model To PPT...">
+      </exportHandler>
+   </extension>
+   
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.torchlight.present.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.torchlight.present.preferences.TorchlightPresentPreferencesPage"
+            id="com.torchlight.present.preferences.TorchlightPresentPreferencePage"
+            name="Torchlight Present">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:toolbar_views?after=com.archimatetool.help.toolbaritem.showHintsView">
+         <command
+               commandId="com.torchlight.present.command.export"
+               icon="Icon.jpg"
+               id="com.torchlight.present.menuitem.export"
+               label="Torchlight Present"
+               style="push"
+               tooltip="Torchlight Present">
+         </command>
+      </menuContribution>
+      
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:com.archimatetool.editor.treeModelView?after=append_extensions">
+         <separator
+               name="com.torchlight.present.separator1"
+               visible="true">
+         </separator><command
+               commandId="com.torchlight.present.command.export"
+               id="com.torchlight.present.popupmenu.export"
+               label="Torchlight-Present"
+               style="push">
+         </command>
+         <separator
+               name="com.torchlight.present.separator2"
+               visible="true">
+         </separator>
+      </menuContribution>
+   </extension>
+<extension
+         point="org.eclipse.ui.commands">
+      <command
+      defaultHandler="com.torchlight.present.TorchlightPresentHandler"
+            id="com.torchlight.present.command.export"
+            name="Torchlight Present">
+      </command>
+</extension>
+</plugin>

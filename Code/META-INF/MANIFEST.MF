@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Torchlight Archilight Presentation Generator
+Bundle-SymbolicName: com.torchlight.present;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Jeff Parker
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Eclipse-BundleShape: dir
+Bundle-ClassPath: com.torchlight.present.jar,
+ lib/lombok.jar,
+ lib/poi-3.17.jar,
+ lib/poi-excelant-3.17.jar,
+ lib/poi-ooxml-3.17.jar,
+ lib/poi-ooxml-schemas-3.17.jar,
+ lib/thumbnailator-0.4.2-all.jar,
+ lib/xmlbeans-2.6.0.jar,
+ lib/poi-3.17.jar
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.archimatetool.editor
+Bundle-Activator: com.torchlight.present.TorchLightPlugin
+Bundle-ActivationPolicy: lazy
